@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact | Your Name" description="Get in touch with me">
+  <h1 class="text-4xl md:text-5xl font-heading text-softBrown mb-8">Get in Touch</h1>
+
+  <div class="prose mb-12">
+    <p>
+      I'd love to hear from you! Whether you have a question, want to collaborate,
+      or just want to say hello, feel free to reach out.
+    </p>
+  </div>
+
+  <div class="space-y-8">
+    <div>
+      <h2 class="text-xl font-heading text-softBrown mb-3">Email</h2>
+      <a href="mailto:your.email@example.com" class="text-accent hover:text-accentDark">
+        your.email@example.com
+      </a>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-heading text-softBrown mb-3">Social</h2>
+      <ul class="space-y-2 list-none p-0">
+        <li>
+          <a
+            href="https://twitter.com/yourhandle"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent hover:text-accentDark"
+          >
+            Twitter / X
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/yourhandle"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent hover:text-accentDark"
+          >
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com/in/yourhandle"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent hover:text-accentDark"
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-12 p-6 bg-warmWhite rounded-lg">
+    <p class="text-warmGray text-sm">
+      I try to respond to all messages, though it may take a few days.
+      Thanks for your patience!
+    </p>
+  </div>
+</BaseLayout>

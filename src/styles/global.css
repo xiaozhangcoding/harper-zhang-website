@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-warmGray leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-softBrown font-heading;
+  }
+
+  a {
+    @apply text-accent hover:text-accentDark transition-colors;
+  }
+
+  /* Prose styles for blog content */
+  .prose {
+    @apply max-w-none;
+  }
+
+  .prose h1 {
+    @apply text-3xl md:text-4xl font-bold mb-6 mt-8;
+  }
+
+  .prose h2 {
+    @apply text-2xl md:text-3xl font-bold mb-4 mt-8;
+  }
+
+  .prose h3 {
+    @apply text-xl md:text-2xl font-bold mb-3 mt-6;
+  }
+
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-4 pl-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose ul li {
+    @apply list-disc;
+  }
+
+  .prose ol li {
+    @apply list-decimal;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-accent pl-4 italic my-4 text-warmGray;
+  }
+
+  .prose code {
+    @apply bg-warmWhite px-1 py-0.5 rounded text-sm;
+  }
+
+  .prose pre {
+    @apply bg-warmWhite p-4 rounded-lg overflow-x-auto my-4;
+  }
+
+  .prose img {
+    @apply rounded-lg my-6 mx-auto max-w-full h-auto;
+  }
+
+  .prose a {
+    @apply underline underline-offset-2;
+  }
+
+  /* Video embed responsive container */
+  .video-container {
+    @apply relative w-full my-6;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+
+  .video-container iframe {
+    @apply absolute top-0 left-0 w-full h-full rounded-lg;
+  }
+}
