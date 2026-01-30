@@ -5,7 +5,9 @@ pubDate: 2026-01-26
 heroImage: ""
 ---
 
-我叫张晓，目前是微软的AI产品经理。
+我叫张晓, 名字来自“春眠不觉晓”。
+
+我是个小镇姑娘，因为技术走到了北京，又到了美国。
 
 我喜欢历史，文学，心理学，网球，hiking，骑车。 最近因为AI的加持，对技术也越来越感兴趣。
 
@@ -14,6 +16,12 @@ heroImage: ""
 
 Hi,
 
-My name is Xiao. I'm a mom, a person have deep love for humanity, and a PM in AI domain. 
+My name is Xiao Zhang.
 
-Nice to meet you. 
+I'm a mom, a daughter, a wife, and a tech professional pursuing real impact.
+
+I current work for Microsoft as AI product manager. 
+
+I have deep love for humanity and huge passion for AI.
+
+Nice to meet you.

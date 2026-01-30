@@ -5,9 +5,12 @@ interface Props {
   pubDate: Date;
   slug: string;
   heroImage?: string;
+  hasTranslation?: boolean;
+  enSlug?: string;
+  zhSlug?: string;
 }
 
-const { title, description, pubDate, slug, heroImage } = Astro.props;
+const { title, description, pubDate, slug, heroImage, hasTranslation, enSlug, zhSlug } = Astro.props;
 
 const formattedDate = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -25,7 +28,24 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
         class="w-full h-48 object-cover rounded-lg mb-4 group-hover:opacity-90 transition-opacity"
       />
     )}
-    <time class="text-sm text-warmGray">{formattedDate}</time>
+    <div class="flex items-center justify-between mb-1">
+      <time class="text-sm text-warmGray">{formattedDate}</time>
+      {hasTranslation && (
+        <div class="flex gap-2 text-xs">
+          {zhSlug && (
+            <a href={`/blog/${zhSlug}`} class="text-warmGray hover:text-accent transition-colors" onclick="event.stopPropagation()">
+              中文
+            </a>
+          )}
+          {enSlug && zhSlug && <span class="text-warmGray">|</span>}
+          {enSlug && (
+            <a href={`/blog/${enSlug}`} class="text-warmGray hover:text-accent transition-colors" onclick="event.stopPropagation()">
+              EN
+            </a>
+          )}
+        </div>
+      )}
+    </div>
     <h3 class="text-xl font-heading text-softBrown group-hover:text-accent transition-colors mt-1 mb-2">
       {title}
     </h3>

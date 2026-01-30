@@ -4,7 +4,25 @@ import PostCard from '../../components/PostCard.astro';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('blog');
-const sortedPosts = allPosts.sort(
+
+// Group posts by their base slug (original post)
+const postGroups = new Map();
+
+allPosts.forEach(post => {
+  const baseSlug = post.data.translationOf || post.slug;
+  if (!postGroups.has(baseSlug)) {
+    postGroups.set(baseSlug, []);
+  }
+  postGroups.get(baseSlug).push(post);
+});
+
+// Get unique posts (show each post group once, prefer Chinese version)
+const uniquePosts = Array.from(postGroups.values()).map(group => {
+  // Find Chinese version first, otherwise take any version
+  return group.find(p => !p.data.lang || p.data.lang === 'zh') || group[0];
+});
+
+const sortedPosts = uniquePosts.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
@@ -17,15 +35,25 @@ const sortedPosts = allPosts.sort(
 
   {sortedPosts.length > 0 ? (
     <div class="space-y-12">
-      {sortedPosts.map((post) => (
-        <PostCard
-          title={post.data.title}
-          description={post.data.description}
-          pubDate={post.data.pubDate}
-          slug={post.slug}
-          heroImage={post.data.heroImage}
-        />
-      ))}
+      {sortedPosts.map((post) => {
+        const group = postGroups.get(post.data.translationOf || post.slug);
+        const hasTranslation = group.length > 1;
+        const enVersion = group.find(p => p.data.lang === 'en');
+        const zhVersion = group.find(p => !p.data.lang || p.data.lang === 'zh');
+        
+        return (
+          <PostCard
+            title={post.data.title}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            slug={post.slug}
+            heroImage={post.data.heroImage}
+            hasTranslation={hasTranslation}
+            enSlug={enVersion?.slug}
+            zhSlug={zhVersion?.slug}
+          />
+        );
+      })}
     </div>
   ) : (
     <p class="text-warmGray italic">No posts yet. Check back soon!</p>

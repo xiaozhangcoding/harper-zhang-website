@@ -18,14 +18,47 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
 });
+
+// Find translations
+const allPosts = await getCollection('blog');
+const baseSlug = post.data.translationOf || post.slug;
+const translations = allPosts.filter(p => 
+  p.slug === baseSlug || p.data.translationOf === baseSlug
+);
+const enVersion = translations.find(p => p.data.lang === 'en');
+const zhVersion = translations.find(p => !p.data.lang || p.data.lang === 'zh');
+const hasTranslation = translations.length > 1;
 ---
 
 <BaseLayout title={`${post.data.title} | Xiao Zhang`} description={post.data.description}>
   <article>
     <header class="mb-8">
-      <a href="/blog" class="text-accent hover:text-accentDark text-sm mb-4 inline-block">
-        &larr; Back to all posts
-      </a>
+      <div class="flex items-center justify-between mb-4">
+        <a href="/blog" class="text-accent hover:text-accentDark text-sm inline-block">
+          &larr; Back to all posts
+        </a>
+        {hasTranslation && (
+          <div class="flex gap-3 text-sm">
+            {zhVersion && (
+              <a 
+                href={`/blog/${zhVersion.slug}`} 
+                class={`hover:text-accent transition-colors ${(!post.data.lang || post.data.lang === 'zh') ? 'text-accent font-semibold' : 'text-warmGray'}`}
+              >
+                中文
+              </a>
+            )}
+            {enVersion && zhVersion && <span class="text-warmGray">|</span>}
+            {enVersion && (
+              <a 
+                href={`/blog/${enVersion.slug}`} 
+                class={`hover:text-accent transition-colors ${post.data.lang === 'en' ? 'text-accent font-semibold' : 'text-warmGray'}`}
+              >
+                English
+              </a>
+            )}
+          </div>
+        )}
+      </div>
       <h1 class="text-3xl md:text-4xl font-heading text-softBrown mb-4">
         {post.data.title}
       </h1>
