@@ -51,6 +51,10 @@ const sortedPosts = uniquePosts.sort(
             hasTranslation={hasTranslation}
             enSlug={enVersion?.slug}
             zhSlug={zhVersion?.slug}
+            enTitle={enVersion?.data.title}
+            zhTitle={zhVersion?.data.title}
+            enDescription={enVersion?.data.description}
+            zhDescription={zhVersion?.data.description}
           />
         );
       })}
