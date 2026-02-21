@@ -1,10 +1,10 @@
 ---
 title: "When AI Started Taking Jobs - A Microsoft AI PM's Story"
 description: "What does it feel like when the AI tools you helped build are the first to threaten your own job? My six-month journey from resisting AI to becoming an AI pioneer"
-pubDate: 2026-02-20
+pubDate: 2026-02-07
 heroImage: ""
 lang: "en"
-translationOf: "ai-almost-take-my-job-and-my-response"
+translationOf: "ai-taking-jobs"
 ---
 
 What does it feel like when the AI tools you helped build are the first to threaten your own job?
