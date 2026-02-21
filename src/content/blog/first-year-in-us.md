@@ -3,6 +3,7 @@ title: "我来美国的第一年"
 description: "My reflection of the first year in US"
 pubDate: 2026-01-26
 heroImage: "../../../images/first-year/tennis-court.jpg"
+lang: "zh"
 ---
 
 # 我来美国的第一年

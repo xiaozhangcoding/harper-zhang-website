@@ -3,6 +3,7 @@ title: "关于张晓"
 description: "关于我的简单介绍"
 pubDate: 2026-01-26
 heroImage: ""
+lang: "zh"
 ---
 
 我叫张晓, 名字来自“春眠不觉晓”。
