@@ -17,9 +17,15 @@ From my own experience, combined with keeping up with AI developments for work, 
 
 Looking at recent layoff data from major tech companies, engineers were hit hardest, followed by product managers. The logic is simple: AI coding is currently the fastest-advancing area, so fewer engineers are needed. Fewer engineers means fewer PMs. It's a domino effect—engineers and PMs are first. But these are people who understand technology, who specialize in automation. What will they do next? I suspect many will scatter across industries, automating other fields. There's another factor: AI coding is advancing fastest because that's where the world's brightest minds are concentrated. Once that work is largely done, those minds will turn to the next domain (this is already happening), and the next wave of people will be affected...
 
+![Layoffs by role](/images/ai-taking-jobs/image-1.png)
+
 According to statistics, nearly 400,000 people were laid off in the US in 2025. The 2020 peak of nearly 2 million was pandemic-driven. I don't know when the next peak will come—emotionally, I hope not soon; rationally, I think it will be soon. At Davos, Anthropic CEO Dario predicted that within 1-5 years, 50% of entry-level white-collar jobs will disappear because AI can do them.
 
+![US layoffs by year](/images/ai-taking-jobs/image-2.png)
+
 AI tools like Claude Coworker can now expand to various roles—sales, marketing, and more. The impact clearly extends beyond coding and will soon sweep through white-collar work. Jobs with clear answers, jobs that are easy to verify—those are easiest to replace.
+
+![Claude Coworker](/images/ai-taking-jobs/image-3.png)
 
 All this is to say: AI displacement is happening now. I hope readers take this seriously.
 
