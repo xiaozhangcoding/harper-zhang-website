@@ -8,9 +8,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "notion": "node scripts/notion-to-blog.mjs"
+    "notion": "node scripts/notion-to-blog.mjs",
+    "translate": "node scripts/translate-blog.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
     "@notionhq/client": "^2.2.0",
     "astro": "^4.16.0",
     "@astrojs/tailwind": "^5.1.0",
